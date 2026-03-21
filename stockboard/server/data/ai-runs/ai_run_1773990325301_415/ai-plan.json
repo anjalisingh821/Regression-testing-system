@@ -1,0 +1,132 @@
+{
+  "steps": [
+    {
+      "type": "depositToWallet",
+      "amount": 5000
+    },
+    {
+      "type": "expectVisible",
+      "testId": "toast-message"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "successfully deposited"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "wallet-balance",
+      "text": "5000"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "AAPL"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 5
+    },
+    {
+      "type": "expectVisible",
+      "testId": "toast-message"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "AAPL purchased successfully"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "portfolio-holdings-table"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-AAPL"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "holding-row-AAPL",
+      "text": "5"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "toast-message"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "MSFT added to watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "watch-toggle-MSFT"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "toast-message"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "MSFT removed from watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "GOOG"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 2
+    },
+    {
+      "type": "expectVisible",
+      "testId": "toast-message"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "GOOG purchased successfully"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-GOOG"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "holding-row-GOOG",
+      "text": "2"
+    }
+  ]
+}

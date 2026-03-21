@@ -1,0 +1,95 @@
+{
+  "steps": [
+    {
+      "type": "depositToWallet",
+      "amount": 1000
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "wallet-balance",
+      "text": "1,000.00"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "Deposit successful"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 2
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "Purchase successful"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "wallet-balance",
+      "text": "600.00"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "added to watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "watch-toggle-MSFT"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "portfolio-holdings-table"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-MSFT"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "TSLA"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 10
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "Insufficient funds"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "wallet-balance",
+      "text": "600.00"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-logout"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "steps": [
+    {
+      "type": "depositToWallet",
+      "amount": 20000
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "RELIANCE"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 1
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-RELIANCE"
+    }
+  ]
+}

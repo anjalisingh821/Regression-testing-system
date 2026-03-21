@@ -1,0 +1,108 @@
+{
+  "steps": [
+    {
+      "type": "depositToWallet",
+      "amount": 10000
+    },
+    {
+      "type": "expectVisible",
+      "testId": "wallet-balance"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "AAPL"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 5
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "purchased successfully"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-AAPL"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "GOOGL"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "GOOGL"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "added to watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "GOOGL"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "GOOGL"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "removed from watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 3
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "purchased successfully"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-AAPL"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-MSFT"
+    }
+  ]
+}

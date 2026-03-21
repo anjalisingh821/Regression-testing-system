@@ -1,0 +1,8 @@
+{
+  "steps": [
+    {
+      "type": "expectVisible",
+      "testId": "nav-market"
+    }
+  ]
+}

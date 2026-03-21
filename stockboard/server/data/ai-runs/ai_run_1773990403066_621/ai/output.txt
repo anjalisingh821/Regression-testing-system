@@ -1,0 +1,55 @@
+
+Running 1 test using 1 worker
+
+
+
+
+
+[1A[2K[1/1] [chromium] › tests\aiPlanRunner.spec.ts:95:1 › ai plan runner executes generated steps
+[1A[2K  1) [chromium] › tests\aiPlanRunner.spec.ts:95:1 › ai plan runner executes generated steps ────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: getByTestId('toast-message')
+    Expected substring: [32m"Deposit successful"[39m
+    Timeout: 8000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 8000ms[22m
+    [2m  - waiting for getByTestId('toast-message')[22m
+
+
+      67 |     case 'expectTextContains': {
+      68 |       const el = page.getByTestId(step.testId)
+    > 69 |       await expect(el).toContainText(step.text)
+         |                        ^
+      70 |       return
+      71 |     }
+      72 |     case 'toggleWatchlist':
+        at runStep (D:\Testing-project\stockboard\tests\aiPlanRunner.spec.ts:69:24)
+        at D:\Testing-project\stockboard\tests\aiPlanRunner.spec.ts:114:11
+
+    Error: apiRequestContext._wrapApiCall: ENOENT: no such file or directory, copyfile 'D:\Testing-project\stockboard\test-results\.playwright-artifacts-0\traces\6d2ea35bc3d5a7d0c870-c48150ade882ae599119-recording1.network' -> 'D:\Testing-project\stockboard\test-results\.playwright-artifacts-0\traces\6d2ea35bc3d5a7d0c870-c48150ade882ae599119-recording1-pwnetcopy-1.network'
+
+    Error: apiRequestContext._wrapApiCall: ENOENT: no such file or directory, open 'D:\Testing-project\stockboard\test-results\.playwright-artifacts-0\traces\6d2ea35bc3d5a7d0c870-c48150ade882ae599119.trace'
+
+    Error: ENOENT: no such file or directory, open 'D:\Testing-project\stockboard\test-results\.playwright-artifacts-0\0d5daecacc16ee7fa4511f9691705f61.zip'
+
+    [31mTest timeout of 45000ms exceeded.[39m
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\aiPlanRunner-ai-plan-runner-executes-generated-steps-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\aiPlanRunner-ai-plan-runner-executes-generated-steps-chromium\error-context.md
+
+
+[1A[2K  1 failed
+    [chromium] › tests\aiPlanRunner.spec.ts:95:1 › ai plan runner executes generated steps ─────────
+
+
+[1A[2K(node:20544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:20544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

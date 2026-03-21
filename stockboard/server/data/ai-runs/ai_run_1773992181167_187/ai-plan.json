@@ -1,0 +1,117 @@
+{
+  "steps": [
+    {
+      "type": "depositToWallet",
+      "amount": 10000
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "wallet-balance",
+      "text": "$10,000.00"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "AAPL"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 10
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "Purchased 10 shares of AAPL"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "portfolio-holdings-table"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-AAPL"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "MSFT added to watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "watch-toggle-MSFT"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "MSFT removed from watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "GOOG"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 5
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "Purchased 5 shares of GOOG"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-GOOG"
+    }
+  ]
+}

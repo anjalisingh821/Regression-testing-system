@@ -1,0 +1,162 @@
+{
+  "config": {
+    "configFile": "D:\\Testing-project\\stockboard\\playwright.config.ts",
+    "rootDir": "D:/Testing-project/stockboard/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Testing-project/stockboard/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/Testing-project/stockboard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\Testing-project\\stockboard\\server\\data\\ai-runs\\ai_run_1773990090958_394\\ai\\results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.2",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "aiPlanRunner.spec.ts",
+      "file": "aiPlanRunner.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ai plan runner executes generated steps",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 15406,
+                  "error": {
+                    "message": "TimeoutError: locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('AAPL', { exact: true }).locator('xpath=ancestor::tr[1]')\u001b[22m\n",
+                    "stack": "TimeoutError: locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('AAPL', { exact: true }).locator('xpath=ancestor::tr[1]')\u001b[22m\n\n    at selectStockInMarket (D:\\Testing-project\\stockboard\\tests\\playbook.ts:120:13)\n    at runStep (D:\\Testing-project\\stockboard\\tests\\aiPlanRunner.spec.ts:76:13)\n    at D:\\Testing-project\\stockboard\\tests\\aiPlanRunner.spec.ts:114:11",
+                    "location": {
+                      "file": "D:\\Testing-project\\stockboard\\tests\\playbook.ts",
+                      "column": 13,
+                      "line": 120
+                    },
+                    "snippet": "   at playbook.ts:120\n\n  118 |   const sym = page.getByText(symbol, { exact: true })\n  119 |   const row = sym.locator('xpath=ancestor::tr[1]')\n> 120 |   await row.click()\n      |             ^\n  121 | }\n  122 |\n  123 | export async function buySelectedStock(page: Page, qty: number) {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Testing-project\\stockboard\\tests\\playbook.ts",
+                        "column": 13,
+                        "line": 120
+                      },
+                      "message": "TimeoutError: locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('AAPL', { exact: true }).locator('xpath=ancestor::tr[1]')\u001b[22m\n\n\n   at playbook.ts:120\n\n  118 |   const sym = page.getByText(symbol, { exact: true })\n  119 |   const row = sym.locator('xpath=ancestor::tr[1]')\n> 120 |   await row.click()\n      |             ^\n  121 | }\n  122 |\n  123 | export async function buySelectedStock(page: Page, qty: number) {\n    at selectStockInMarket (D:\\Testing-project\\stockboard\\tests\\playbook.ts:120:13)\n    at runStep (D:\\Testing-project\\stockboard\\tests\\aiPlanRunner.spec.ts:76:13)\n    at D:\\Testing-project\\stockboard\\tests\\aiPlanRunner.spec.ts:114:11"
+                    },
+                    {
+                      "message": "Error: apiRequestContext._wrapApiCall: ENOENT: no such file or directory, copyfile 'D:\\Testing-project\\stockboard\\test-results\\.playwright-artifacts-0\\traces\\6d2ea35bc3d5a7d0c870-c48150ade882ae599119-recording1.network' -> 'D:\\Testing-project\\stockboard\\test-results\\.playwright-artifacts-0\\traces\\6d2ea35bc3d5a7d0c870-c48150ade882ae599119-recording1-pwnetcopy-1.network'"
+                    },
+                    {
+                      "message": "Error: apiRequestContext._wrapApiCall: ENOENT: no such file or directory, open 'D:\\Testing-project\\stockboard\\test-results\\.playwright-artifacts-0\\traces\\6d2ea35bc3d5a7d0c870-c48150ade882ae599119.trace'"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-20T07:02:37.587Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Testing-project\\stockboard\\test-results\\aiPlanRunner-ai-plan-runner-executes-generated-steps-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Testing-project\\stockboard\\test-results\\aiPlanRunner-ai-plan-runner-executes-generated-steps-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Testing-project\\stockboard\\test-results\\aiPlanRunner-ai-plan-runner-executes-generated-steps-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Testing-project\\stockboard\\tests\\playbook.ts",
+                    "column": 13,
+                    "line": 120
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6d2ea35bc3d5a7d0c870-c48150ade882ae599119",
+          "file": "aiPlanRunner.spec.ts",
+          "line": 95,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-03-20T07:02:33.532Z",
+    "duration": 21860.276,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

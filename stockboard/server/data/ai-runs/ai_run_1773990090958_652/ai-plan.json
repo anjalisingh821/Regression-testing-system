@@ -1,0 +1,105 @@
+{
+  "steps": [
+    {
+      "type": "depositToWallet",
+      "amount": 10000
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "wallet-balance",
+      "text": "10000"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "Deposit successful"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "AAPL"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "ticket-side-buy"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 5
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "Stock purchased successfully"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "MSFT added to watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "portfolio-holdings-table"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-AAPL"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "watch-toggle-MSFT"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "MSFT removed from watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "nav-market"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "nav-watchlist"
+    }
+  ]
+}

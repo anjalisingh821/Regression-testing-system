@@ -1,0 +1,96 @@
+{
+  "steps": [
+    {
+      "type": "depositToWallet",
+      "amount": 10000
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "deposited"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "wallet-balance"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "ticket-side-buy"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "AAPL"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 10
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "purchased 10 shares of AAPL"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "portfolio-holdings-table"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-AAPL"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "added MSFT to watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "watch-toggle-MSFT"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "removed MSFT from watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-watchlist"
+    }
+  ]
+}

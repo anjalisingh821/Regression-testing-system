@@ -1,0 +1,102 @@
+{
+  "steps": [
+    {
+      "type": "depositToWallet",
+      "amount": 10000
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "wallet-balance",
+      "text": "10,000"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "AAPL"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 5
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "Order placed successfully"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "portfolio-holdings-table"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-AAPL"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "holding-row-AAPL",
+      "text": "5"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "GOOG"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "GOOG"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "added to watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "watch-toggle-GOOG"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "GOOG"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "GOOG"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "removed from watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "Your watchlist is empty"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-logout"
+    }
+  ]
+}

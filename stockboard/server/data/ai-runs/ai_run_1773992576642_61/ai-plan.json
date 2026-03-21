@@ -1,0 +1,103 @@
+{
+  "steps": [
+    {
+      "type": "depositToWallet",
+      "amount": 5000
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "wallet-balance",
+      "text": "5,000.00"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "AAPL"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 1
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "Bought 1 share of AAPL"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "wallet-balance",
+      "text": "4,830.00"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "portfolio-holdings-table"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-AAPL"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "holding-row-AAPL",
+      "text": "1"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "MSFT added to watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "watch-toggle-MSFT"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-market"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "MSFT"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "MSFT removed from watchlist"
+    },
+    {
+      "type": "nav",
+      "testId": "nav-watchlist"
+    },
+    {
+      "type": "expectTextContains",
+      "testId": "toast-message",
+      "text": "Your watchlist is empty."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "steps": [
+    {
+      "type": "expectVisible",
+      "testId": "nav-market"
+    },
+    {
+      "type": "depositToWallet",
+      "amount": 5000
+    },
+    {
+      "type": "expectVisible",
+      "testId": "wallet-balance"
+    },
+    {
+      "type": "toggleWatchlist",
+      "symbol": "RELIANCE"
+    },
+    {
+      "type": "selectStockInMarket",
+      "symbol": "RELIANCE"
+    },
+    {
+      "type": "buySelectedStock",
+      "qty": 1
+    },
+    {
+      "type": "nav",
+      "testId": "nav-portfolio"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "portfolio-holdings-table"
+    },
+    {
+      "type": "expectVisible",
+      "testId": "holding-row-RELIANCE"
+    }
+  ]
+}

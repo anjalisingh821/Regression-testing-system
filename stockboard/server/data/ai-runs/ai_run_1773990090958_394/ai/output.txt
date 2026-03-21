@@ -1,0 +1,55 @@
+
+Running 1 test using 1 worker
+
+
+
+
+
+[1A[2K[1/1] [chromium] › tests\aiPlanRunner.spec.ts:95:1 › ai plan runner executes generated steps
+[1A[2K  1) [chromium] › tests\aiPlanRunner.spec.ts:95:1 › ai plan runner executes generated steps ────────
+
+    TimeoutError: locator.click: Timeout 12000ms exceeded.
+    Call log:
+    [2m  - waiting for getByText('AAPL', { exact: true }).locator('xpath=ancestor::tr[1]')[22m
+
+
+       at playbook.ts:120
+
+      118 |   const sym = page.getByText(symbol, { exact: true })
+      119 |   const row = sym.locator('xpath=ancestor::tr[1]')
+    > 120 |   await row.click()
+          |             ^
+      121 | }
+      122 |
+      123 | export async function buySelectedStock(page: Page, qty: number) {
+        at selectStockInMarket (D:\Testing-project\stockboard\tests\playbook.ts:120:13)
+        at runStep (D:\Testing-project\stockboard\tests\aiPlanRunner.spec.ts:76:13)
+        at D:\Testing-project\stockboard\tests\aiPlanRunner.spec.ts:114:11
+
+    Error: apiRequestContext._wrapApiCall: ENOENT: no such file or directory, copyfile 'D:\Testing-project\stockboard\test-results\.playwright-artifacts-0\traces\6d2ea35bc3d5a7d0c870-c48150ade882ae599119-recording1.network' -> 'D:\Testing-project\stockboard\test-results\.playwright-artifacts-0\traces\6d2ea35bc3d5a7d0c870-c48150ade882ae599119-recording1-pwnetcopy-1.network'
+
+    Error: apiRequestContext._wrapApiCall: ENOENT: no such file or directory, open 'D:\Testing-project\stockboard\test-results\.playwright-artifacts-0\traces\6d2ea35bc3d5a7d0c870-c48150ade882ae599119.trace'
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\aiPlanRunner-ai-plan-runner-executes-generated-steps-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\aiPlanRunner-ai-plan-runner-executes-generated-steps-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\aiPlanRunner-ai-plan-runner-executes-generated-steps-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\aiPlanRunner-ai-plan-runner-executes-generated-steps-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  1 failed
+    [chromium] › tests\aiPlanRunner.spec.ts:95:1 › ai plan runner executes generated steps ─────────
+
+
+[1A[2K(node:10712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:10712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

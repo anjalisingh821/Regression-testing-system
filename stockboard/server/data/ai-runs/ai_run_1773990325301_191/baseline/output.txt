@@ -1,0 +1,79 @@
+
+Running 4 tests using 4 workers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1A[2K[1/4] [chromium] › tests\builders\walletTests.ts:10:3 › wallet add and withdraw constraint
+[1A[2K[2/4] [chromium] › tests\builders\watchlistTests.ts:10:3 › can add a stock from market into watchlist
+[1A[2K[3/4] [chromium] › tests\builders\portfolioTests.ts:9:3 › portfolio holdings are visible after buying
+[1A[2K[4/4] [chromium] › tests\builders\authTests.ts:9:3 › login via API seed and land on dashboard
+[1A[2K  1) [chromium] › tests\builders\portfolioTests.ts:9:3 › portfolio holdings are visible after buying 
+
+    TimeoutError: page.waitForFunction: Timeout 12000ms exceeded.
+
+       at playbook.ts:92
+
+      90 |
+      91 |   // Wait until the displayed balance increases.
+    > 92 |   await page.waitForFunction(
+         |              ^
+      93 |     (min) => {
+      94 |       const el = document.querySelector('[data-testid="wallet-balance"]')
+      95 |       if (!el) return false
+        at depositToWallet (D:\Testing-project\stockboard\tests\playbook.ts:92:14)
+        at D:\Testing-project\stockboard\tests\builders\portfolioTests.ts:24:5
+
+    Error: apiRequestContext._wrapApiCall: ENOENT: no such file or directory, copyfile 'D:\Testing-project\stockboard\test-results\.playwright-artifacts-1\traces\34cb4603fa9a5b79d30c-f3c970cbf07de2916f20-recording1.network' -> 'D:\Testing-project\stockboard\test-results\.playwright-artifacts-1\traces\34cb4603fa9a5b79d30c-f3c970cbf07de2916f20-recording1-pwnetcopy-1.network'
+
+    Error: apiRequestContext._wrapApiCall: ENOENT: no such file or directory, open 'D:\Testing-project\stockboard\test-results\.playwright-artifacts-1\traces\34cb4603fa9a5b79d30c-f3c970cbf07de2916f20.trace'
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\portfolio-portfolio-holdings-are-visible-after-buying-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\portfolio-portfolio-holdings-are-visible-after-buying-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\portfolio-portfolio-holdings-are-visible-after-buying-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\portfolio-portfolio-holdings-are-visible-after-buying-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  1 failed
+    [chromium] › tests\builders\portfolioTests.ts:9:3 › portfolio holdings are visible after buying 
+  3 passed (33.0s)
+
+
+[1A[2K(node:29016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:28940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:28948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:28980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:29016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:28980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:28940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:28948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

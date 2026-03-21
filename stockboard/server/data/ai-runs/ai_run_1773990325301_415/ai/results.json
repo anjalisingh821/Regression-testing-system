@@ -1,0 +1,162 @@
+{
+  "config": {
+    "configFile": "D:\\Testing-project\\stockboard\\playwright.config.ts",
+    "rootDir": "D:/Testing-project/stockboard/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Testing-project/stockboard/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/Testing-project/stockboard/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\Testing-project\\stockboard\\server\\data\\ai-runs\\ai_run_1773990325301_415\\ai\\results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.2",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "aiPlanRunner.spec.ts",
+      "file": "aiPlanRunner.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ai plan runner executes generated steps",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 10406,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('toast-message')\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('toast-message')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('toast-message')\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('toast-message')\u001b[22m\n\n    at runStep (D:\\Testing-project\\stockboard\\tests\\aiPlanRunner.spec.ts:64:24)\n    at D:\\Testing-project\\stockboard\\tests\\aiPlanRunner.spec.ts:114:11",
+                    "location": {
+                      "file": "D:\\Testing-project\\stockboard\\tests\\aiPlanRunner.spec.ts",
+                      "column": 24,
+                      "line": 64
+                    },
+                    "snippet": "  62 |     case 'expectVisible': {\n  63 |       const el = page.getByTestId(step.testId)\n> 64 |       await expect(el).toBeVisible()\n     |                        ^\n  65 |       return\n  66 |     }\n  67 |     case 'expectTextContains': {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Testing-project\\stockboard\\tests\\aiPlanRunner.spec.ts",
+                        "column": 24,
+                        "line": 64
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('toast-message')\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('toast-message')\u001b[22m\n\n\n  62 |     case 'expectVisible': {\n  63 |       const el = page.getByTestId(step.testId)\n> 64 |       await expect(el).toBeVisible()\n     |                        ^\n  65 |       return\n  66 |     }\n  67 |     case 'expectTextContains': {\n    at runStep (D:\\Testing-project\\stockboard\\tests\\aiPlanRunner.spec.ts:64:24)\n    at D:\\Testing-project\\stockboard\\tests\\aiPlanRunner.spec.ts:114:11"
+                    },
+                    {
+                      "message": "Error: apiRequestContext._wrapApiCall: ENOENT: no such file or directory, open 'D:\\Testing-project\\stockboard\\test-results\\.playwright-artifacts-0\\traces\\6d2ea35bc3d5a7d0c870-c48150ade882ae599119-recording1.network'"
+                    },
+                    {
+                      "message": "Error: apiRequestContext._wrapApiCall: ENOENT: no such file or directory, open 'D:\\Testing-project\\stockboard\\test-results\\.playwright-artifacts-0\\traces\\6d2ea35bc3d5a7d0c870-c48150ade882ae599119.trace'"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-20T07:06:26.677Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Testing-project\\stockboard\\test-results\\aiPlanRunner-ai-plan-runner-executes-generated-steps-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Testing-project\\stockboard\\test-results\\aiPlanRunner-ai-plan-runner-executes-generated-steps-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Testing-project\\stockboard\\test-results\\aiPlanRunner-ai-plan-runner-executes-generated-steps-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Testing-project\\stockboard\\tests\\aiPlanRunner.spec.ts",
+                    "column": 24,
+                    "line": 64
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6d2ea35bc3d5a7d0c870-c48150ade882ae599119",
+          "file": "aiPlanRunner.spec.ts",
+          "line": 95,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-03-20T07:06:19.371Z",
+    "duration": 18690.763,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

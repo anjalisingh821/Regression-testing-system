@@ -33,3 +33,4 @@ jobs:
         cd stockboard
         npm run build || true
 
+# trigger

@@ -10,21 +10,26 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
       with:
-        python-version: "3.10"
+        node-version: "18"
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+        cd stockboard
+        npm install
 
-    - name: Run tests
+    - name: Run tests (Playwright)
       run: |
-        python -m unittest discover || true
+        cd stockboard
+        npx playwright install
+        npx playwright test || true
 
-    - name: Run project
+    - name: Build project
       run: |
-        python main.py || true
+        cd stockboard
+        npm run build || true
+

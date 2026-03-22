@@ -119,3 +119,5 @@ Report and status are available on the AI Regression page.
 | `npm run preview` | Preview production build       |
 | `npm run lint`    | Run ESLint                     |
 | `npx playwright test` | Run E2E tests             |
+## CI/CD
+GitHub Actions pipeline added
